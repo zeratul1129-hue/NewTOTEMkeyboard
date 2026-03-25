@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.1  # <-- 이 값을 그대로 쓰시되, 
+      revision: a3872477382436d6a89c3797682283a21689252c # Zephyr 3.5 이전의 안정 버전
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
