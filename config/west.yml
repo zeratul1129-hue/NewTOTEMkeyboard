@@ -7,5 +7,10 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.1  # <-- 이대로 두시거나, 아래 내용을 시도하세요.
+      revision: v0.1  # <-- 이 값을 그대로 쓰시되, 
       import: app/west.yml
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main     
+  self:
+    path: config
