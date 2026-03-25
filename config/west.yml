@@ -2,14 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: caksoylar  # <-- new entry
+    - name: caksoylar
       url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.1  # <-- 이 부분을 main에서 v0.1로 수정
       import: app/west.yml
-    - name: zmk-rgbled-widget  # <-- new entry
+    - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main     
   self:
