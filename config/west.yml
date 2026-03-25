@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3  # 최신 버전인 4.1.0 대신 안정 버전인 v0.3 사용
+      revision: 28f6424ecf5506048039757656687f873099087c  # 이 값을 정확히 입력하세요.
       import: app/west.yml
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main     
   self:
     path: config
