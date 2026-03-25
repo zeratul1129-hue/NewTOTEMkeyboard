@@ -1,7 +1,6 @@
 include:
   - board: xiao_ble
-    shield: totem_left  # rgbled_adapter 삭제
-    snippet: studio-rpc-usb-uart
+    shield: totem_left
   - board: xiao_ble
     shield: totem_right
   - board: xiao_ble
