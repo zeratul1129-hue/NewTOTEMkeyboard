@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3  # 최신 버전인 4.1.0 대신 안정 버전인 v0.3 사용
       import: app/west.yml
   self:
     path: config
