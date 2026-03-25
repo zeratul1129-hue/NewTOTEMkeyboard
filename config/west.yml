@@ -7,10 +7,5 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.1  # <-- 다시 v0.1로 두거나, 아래의 브랜치 방식으로 시도합니다.
+      revision: v0.1  # <-- 이대로 두시거나, 아래 내용을 시도하세요.
       import: app/west.yml
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main     
-  self:
-    path: config
