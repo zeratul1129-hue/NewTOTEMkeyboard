@@ -17,27 +17,61 @@
     // ==========================================
     // COMBOS (Poker Specific Shortcuts)
     // ==========================================
+
     combos {
         compatible = "zmk,combos";
 
-        c_num1 { bindings = <&hob LA(F13) F13>; key-positions = <15 6>; };
-        c_num3 { bindings = <&hob LA(F15) F15>; key-positions = <6 17>; };
-        c_qtbet { bindings = <&kp KP_N7>; key-positions = <23 13>; };
-        c_fullbet { bindings = <&kp KP_N9>; key-positions = <13 14>; };
-        c_num8 { bindings = <&hob LA(F20) F20>; key-positions = <15 17>; };
-        c_num7 { bindings = <&hob F21 F17>; key-positions = <18 15>; };
-        c_num7mk2 { bindings = <&kp F21>; key-positions = <18 17>; };
-        c_num5 { bindings = <&kp KP_N8>; key-positions = <23 22>; };
+        c_num1 {
+            bindings = <&hob LA(F13) F13>;
+            key-positions = <15 6>;
+        };
+
+        c_num3 {
+            bindings = <&hob LA(F15) F15>;
+            key-positions = <6 17>;
+        };
+
+        c_qtbet {
+            bindings = <&kp KP_N7>;
+            key-positions = <23 13>;
+        };
+
+        c_fullbet {
+            bindings = <&kp KP_N9>;
+            key-positions = <13 14>;
+        };
+
+        c_num8 {
+            bindings = <&hob LA(F20) F20>;
+            key-positions = <15 17>;
+        };
+
+        c_num7 {
+            bindings = <&hob F21 F17>;
+            key-positions = <18 15>;
+        };
+
+        c_num7mk2 {
+            bindings = <&kp F21>;
+            key-positions = <18 17>;
+        };
+
+        c_num5 {
+            bindings = <&kp KP_N8>;
+            key-positions = <23 22>;
+        };
     };
 
     // ==========================================
     // BEHAVIORS (Custom Hold-Tap Actions)
     // ==========================================
+
     behaviors {
         hob: hob {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_ON_BITCH";
             bindings = <&kp>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             flavor = "tap-preferred";
@@ -47,6 +81,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LONG_HOLDING";
             bindings = <&kp>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
             flavor = "tap-preferred";
@@ -56,6 +91,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYERMOVE";
             bindings = <&to>, <&tog>;
+
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "tap-preferred";
@@ -65,6 +101,7 @@
     // ==========================================
     // KEYMAP LAYERS
     // ==========================================
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -80,65 +117,70 @@
         // ┗━━━━━━┻━━━━━━┻━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┫   ┣━━━━━━╋━━━━━━╋━━━━━━╋━━━━━━┻━━━━━━┻━━━━━━┛
         //                      ┃ENTER ┃0/DOT ┃moQUIT┃   ┃F19/Al┃F20/Al┃ RALT ┃
         //                      ┗━━━━━━┻━━━━━━┻━━━━━━┛   ┗━━━━━━┻━━━━━━┻━━━━━━┛
+
         base_layer {
             label = "BASE";
             bindings = <
-                &lh LS(LC(W)) F         &kp LSHFT       &kp KP_N7       &kp KP_N8        &kp KP_N9        &hob LA(F13) F13    &hob LA(F14) F14    &hob LA(F15) F15    &mo ROOM            &kp BSPC
-                &lh LS(LC(D)) N1        &kp LC(C)       &kp KP_N4       &kp KP_N5        &kp KP_N6        &hob LA(F16) F16    &hob LA(F17) F17    &hob LA(F18) F18    &hob LA(F17) F17    &bt BT_SEL 2
-&kp BSLH        &lh LC(LS(D)) N2        &kp LC(V)       &kp KP_N1       &kp KP_N2        &kp KP_N3        &hob LA(F19) F19    &hob LA(F20) F20    &lh F22 F21         &lh F21 KP_NLCK     &to NAVN       &sys_reset
-                                                        &kp ENTER       &hob DOT KP_N0   &mo QUIT         &hob LA(F19) F19    &hob LA(F20) F20    &kp RALT
+          &lh LS(LC(W)) F   &kp LSHFT  &kp KP_N7  &kp KP_N8       &kp KP_N9    &hob LA(F13) F13  &hob LA(F14) F14  &hob LA(F15) F15  &mo ROOM          &kp BSPC
+          &lh LS(LC(D)) N1  &kp LC(C)  &kp KP_N4  &kp KP_N5       &kp KP_N6    &hob LA(F16) F16  &hob LA(F17) F17  &hob LA(F18) F18  &hob LA(F17) F17  &none
+&kp BSLH  &lh LC(LS(D)) N2  &kp LC(V)  &kp KP_N1  &kp KP_N2       &kp KP_N3    &hob LA(F19) F19  &hob LA(F20) F20  &lh F22 F21       &lh F21 KP_NLCK   &to NAVN  &sys_reset
+                                       &kp ENTER  &hob DOT KP_N0  &mo QUIT     &hob LA(F19) F19  &hob LA(F20) F20  &kp RALT
             >;
         };
 
         // ------------------------------------------
         // LAYER 1: ROOM (Shift+F Keys)
         // ------------------------------------------
+
         room_layer {
             label = "ROOM";
             bindings = <
-                &trans  &trans  &hob (LA(LS(F13))) LS(F13)  &hob (LA(LS(F14))) LS(F14)  &hob (LA(LS(F15))) LS(F15)    &hob (LA(LS(F13))) LS(F13)  &hob (LS(LA(F14))) LS(F14)  &hob (LA(LS(F15))) LS(F15)  &none   &trans
-                &to BASE &trans &hob (LA(LS(F16))) LS(F16)  &hob (LA(LS(F17))) LS(F17)  &hob (LA(LS(F18))) LS(F18)    &hob (LA(LS(F16))) LS(F16)  &hob (LA(LS(F17))) LS(F17)  &hob (LA(LS(F18))) LS(F18)  &trans  &trans
-&trans          &trans  &trans  &hob (LA(LS(F19))) LS(F7)   &hob (LA(LS(F20))) LS(F20)  &trans                        &hob (LA(LS(F19))) LS(F19)  &hob (LA(LS(F20))) LS(F20)  &kp F21                     &trans  &trans  &trans
-                                                            &kp LALT                    &trans                        &hob (LA(LS(F20))) LS(F20)  &hob (LA(LS(F19))) LS(F19)  &hob (LA(LS(F20))) LS(F20)  &kp BSPC
+        &trans    &trans  &hob LA(LS(F13)) LS(F13)  &hob LA(LS(F14)) LS(F14)  &hob LA(LS(F15)) LS(F15)    &hob LA(LS(F13)) LS(F13)  &hob LS(LA(F14)) LS(F14)  &hob LA(LS(F15)) LS(F15)  &none   &trans
+        &to BASE  &trans  &hob LA(LS(F16)) LS(F16)  &hob LA(LS(F17)) LS(F17)  &hob LA(LS(F18)) LS(F18)    &hob LA(LS(F16)) LS(F16)  &hob LA(LS(F17)) LS(F17)  &hob LA(LS(F18)) LS(F18)  &trans  &trans
+&trans  &trans    &trans  &hob LA(LS(F19)) LS(F7)   &hob LA(LS(F20)) LS(F20)  &trans                      &hob LA(LS(F19)) LS(F19)  &hob LA(LS(F20)) LS(F20)  &kp F21                   &trans  &trans  &trans
+                          &kp LALT                  &trans                    &hob LA(LS(F20)) LS(F20)    &hob LA(LS(F19)) LS(F19)  &hob LA(LS(F20)) LS(F20)  &kp BSPC
             >;
         };
 
         // ------------------------------------------
         // LAYER 2: QUIT (System & Control)
         // ------------------------------------------
+
         quit_layer {
             label = "QUIT";
             bindings = <
-                &to NAVN        &to ENDF  &trans    &trans    &kp F24      &kp LC(F13)  &kp LC(F14)  &kp LC(F15)  &trans  &trans
-                &bt BT_CLR_ALL  &trans    &trans    &kp KP_N8 &trans       &kp LC(F16)  &kp LC(F17)  &kp LC(F18)  &trans  &bt BT_CLR_ALL
-&sys_reset      &bootloader     &trans    &kp KP_N7 &trans    &kp KP_N9    &kp LC(F19)  &kp LC(F20)  &kp F21      &trans  &bt BT_CLR      &to BASE
-                                                    &trans    &trans       &trans       &kp LC(F19)  &kp LC(F20)  &trans
+            &to NAVN        &to ENDF  &trans     &trans     &kp F24      &kp LC(F13)  &kp LC(F14)  &kp LC(F15)  &trans  &trans
+            &bt BT_CLR_ALL  &trans    &trans     &kp KP_N8  &trans       &kp LC(F16)  &kp LC(F17)  &kp LC(F18)  &trans  &bt BT_CLR_ALL
+&sys_reset  &bootloader     &trans    &kp KP_N7  &trans     &kp KP_N9    &kp LC(F19)  &kp LC(F20)  &kp F21      &trans  &bt BT_CLR      &to BASE
+                                      &trans     &trans     &trans       &kp LC(F19)  &kp LC(F20)  &trans
             >;
         };
 
         // ------------------------------------------
         // LAYER 3: NAVN (QWERTY Typing)
         // ------------------------------------------
+
         nav_num_layer {
             label = "NAVN";
             bindings = <
-                &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y      &kp U  &kp I      &kp O       &kp P
-                &kp A  &kp S  &kp D     &kp F  &kp G        &kp H      &kp J  &kp K      &kp L       &kp SEMI
-&kp LSHFT       &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N      &kp M  &kp COMMA  &kp DOT     &kp FSLH     &kp RSHFT
-                              &kp BSPC  &mo BASE &kp SPACE  &kp SPACE  &mo QUIT &kp RALT
+           &kp Q  &kp W  &kp E     &kp R     &kp T        &kp Y      &kp U     &kp I      &kp O    &kp P
+           &kp A  &kp S  &kp D     &kp F     &kp G        &kp H      &kp J     &kp K      &kp L    &kp SEMI
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V     &kp B        &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                         &kp BSPC  &mo BASE  &kp SPACE    &kp SPACE  &mo QUIT  &kp RALT
             >;
         };
 
         // ------------------------------------------
         // LAYER 4: ENDF (Gaming Mode)
         // ------------------------------------------
+
         endfield_layer {
             label = "ENDF";
             bindings = <
-                &kp ESC   &kp TAB   &kp Q           &kp W           &kp E             &trans  &trans  &trans  &trans  &trans
-                &kp B     &kp LSHFT &kp A           &kp S           &kp D             &trans  &trans  &trans  &trans  &trans
-&kp R           &none     &hob LA(N1) N1  &hob LA(N2) N2  &hob LA(N3) N3  &hob LA(N4) N4    &trans  &trans  &trans  &trans  &trans  &to BASE
-                                    &kp LALT        &kp SPACE       &kp F             &trans  &trans  &trans
+       &kp ESC  &kp TAB         &kp Q           &kp W           &kp E             &trans  &trans  &trans  &trans  &trans
+       &kp B    &kp LSHFT       &kp A           &kp S           &kp D             &trans  &trans  &trans  &trans  &trans
+&kp R  &none    &hob LA(N1) N1  &hob LA(N2) N2  &hob LA(N3) N3  &hob LA(N4) N4    &trans  &trans  &trans  &trans  &trans  &to BASE
+                                &kp LALT        &kp SPACE       &kp F             &trans  &trans  &trans
             >;
         };
     };
@@ -146,8 +188,10 @@
     // ==========================================
     // CONDITIONAL LAYERS
     // ==========================================
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         device_layer {
             if-layers = <NAVN ENDF>;
             then-layer = <ENDF>;
