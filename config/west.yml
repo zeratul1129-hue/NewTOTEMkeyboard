@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: 28f6424ecf5506048039757656687f873099087c  # 이 값을 정확히 입력하세요.
+      revision: v0.3-branch  # <-- 해시값 대신 브랜치 이름을 입력합니다.
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
