@@ -135,10 +135,10 @@
         room_layer {
             label = "ROOM";
             bindings = <
-        &trans    &trans  &hob (LA(LS(F13))) LS(F13)  &hob (LA(LS(F14))) LS(F14)  &hob (LA(LS(F15))) LS(F15)    &hob (LA(LS(F13))) LS(F13)  &hob (LS(LA(F14))) LS(F14)  &hob (LA(LS(F15))) LS(F15)  &none   &trans
-        &to BASE  &trans  &hob (LA(LS(F16))) LS(F16)  &hob (LA(LS(F17))) LS(F17)  &hob (LA(LS(F18))) LS(F18)    &hob (LA(LS(F16))) LS(F16)  &hob (LA(LS(F17))) LS(F17)  &hob (LA(LS(F18))) LS(F18)  &trans  &trans
-&trans  &trans    &trans  &hob (LA(LS(F19))) LS(F7)   &hob (LA(LS(F20))) LS(F20)  &trans                        &hob (LA(LS(F19))) LS(F19)  &hob (LA(LS(F20))) LS(F20)  &kp F21                     &trans  &trans  &trans
-                          &kp LALT                    &trans                      &hob (LA(LS(F20))) LS(F20)    &hob (LA(LS(F19))) LS(F19)  &hob (LA(LS(F20))) LS(F20)  &kp BSPC
+        &trans    &trans  &hob LA(LS(F13)) LS(F13)  &hob LA(LS(F14)) LS(F14)  &hob LA(LS(F15)) LS(F15)    &hob LA(LS(F13)) LS(F13)  &hob LS(LA(F14)) LS(F14)  &hob LA(LS(F15)) LS(F15)  &none   &trans
+        &to BASE  &trans  &hob LA(LS(F16)) LS(F16)  &hob LA(LS(F17)) LS(F17)  &hob LA(LS(F18)) LS(F18)    &hob LA(LS(F16)) LS(F16)  &hob LA(LS(F17)) LS(F17)  &hob LA(LS(F18)) LS(F18)  &trans  &trans
+&trans  &trans    &trans  &hob LA(LS(F19)) LS(F7)   &hob LA(LS(F20)) LS(F20)  &trans                      &hob LA(LS(F19)) LS(F19)  &hob LA(LS(F20)) LS(F20)  &kp F21                   &trans  &trans  &trans
+                          &kp LALT                  &trans                    &hob LA(LS(F20)) LS(F20)    &hob LA(LS(F19)) LS(F19)  &hob LA(LS(F20)) LS(F20)  &kp BSPC
             >;
         };
 
@@ -181,6 +181,16 @@
        &kp B    &kp LSHFT       &kp A           &kp S           &kp D             &trans  &trans  &trans  &trans  &trans
 &kp R  &none    &hob LA(N1) N1  &hob LA(N2) N2  &hob LA(N3) N3  &hob LA(N4) N4    &trans  &trans  &trans  &trans  &trans  &to BASE
                                 &kp LALT        &kp SPACE       &kp F             &trans  &trans  &trans
+            >;
+        };
+
+        onehand {
+            label = "BASE";
+            bindings = <
+          &lh F7 F        &kp LSHFT         &kp KP_N7  &kp KP_N8       &kp KP_N9    &hob LA(F13) F13  &hob LA(F14) F14  &hob LA(F15) F15  &mo ROOM          &kp BSPC
+          &lh K_COPY N1   &kp LC(LEFT_ALT)  &kp KP_N4  &kp KP_N5       &kp KP_N6    &hob LA(F16) F16  &hob LA(F17) F17  &hob LA(F18) F18  &hob LA(F17) F17  &none
+&kp BSLH  &lh K_PASTE N2  &kp LC(TAB)       &kp KP_N1  &kp KP_N2       &kp KP_N3    &hob LA(F19) F19  &hob LA(F20) F20  &lh F22 F21       &lh F21 KP_NLCK   &to NAVN  &sys_reset
+                                            &kp ENTER  &hob DOT KP_N0  &kp STAR     &hob LA(F19) F19  &hob LA(F20) F20  &kp RALT
             >;
         };
     };
