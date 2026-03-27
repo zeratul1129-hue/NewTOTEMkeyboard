@@ -85,7 +85,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <1000>;
             flavor = "tap-preferred";
-            quick-tap-ms = <0>;
             retro-tap;
         };
 
