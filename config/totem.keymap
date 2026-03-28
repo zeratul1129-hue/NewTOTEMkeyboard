@@ -60,6 +60,16 @@
             bindings = <&kp KP_N8>;
             key-positions = <23 22>;
         };
+
+        LOH1 {
+            bindings = <&hob F16 F13>;
+            key-positions = <12 3>;
+        };
+
+        LOH2 {
+            bindings = <&hob F18 F15>;
+            key-positions = <3 14>;
+        };
     };
 
     // ==========================================
@@ -122,10 +132,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-          &lh LS(LC(W)) F   &kp LSHFT  &kp KP_N7  &kp KP_N8       &kp KP_N9    &hob LA(F13) F13  &hob LA(F14) F14  &hob LA(F15) F15  &mo ROOM          &kp BSPC
-          &lh LS(LC(D)) N1  &kp LC(C)  &kp KP_N4  &kp KP_N5       &kp KP_N6    &hob LA(F16) F16  &hob LA(F17) F17  &hob LA(F18) F18  &hob LA(F17) F17  &none
-&kp BSLH  &lh LC(LS(D)) N2  &kp LC(V)  &kp KP_N1  &kp KP_N2       &kp KP_N3    &hob LA(F19) F19  &hob LA(F20) F20  &hob F22 F21      &lh F21 KP_NLCK   &to NAVN  &sys_reset
-                                       &kp ENTER  &hob DOT KP_N0  &mo QUIT     &hob LA(F19) F19  &hob LA(F20) F20  &kp RALT
+          &lh LS(LC(W)) F   &kp LSHFT  &kp KP_N7  &kp KP_N8               &kp KP_N9    &hob LA(F13) F13  &hob LA(F14) F14  &hob LA(F15) F15  &mo ROOM          &kp BSPC
+          &lh LS(LC(D)) N1  &kp LC(C)  &kp KP_N4  &kp KP_N5               &kp KP_N6    &hob LA(F16) F16  &hob LA(F17) F17  &hob LA(F18) F18  &hob LA(F17) F17  &none
+&kp BSLH  &lh LC(LS(D)) N2  &kp LC(V)  &kp KP_N1  &kp KP_N2               &kp KP_N3    &hob LA(F19) F19  &hob LA(F20) F20  &hob F22 F21      &lh F21 KP_NLCK   &to NAVN  &sys_reset
+                                       &kp ENTER  &hob KP_NUMBER_5 KP_N0  &mo QUIT     &hob LA(F19) F19  &hob LA(F20) F20  &kp RALT
             >;
         };
 
@@ -188,10 +198,10 @@
         onehand {
             label = "BASE";
             bindings = <
-          &lh F7 F      &kp LSHFT         &kp KP_N7        &kp KP_N8       &kp KP_N9    &hob LA(F13) F13  &hob LA(F14) F14  &hob LA(F15) F15  &mo ROOM          &kp BSPC
-          &lh LC(C) N1  &kp LC(LEFT_ALT)  &kp KP_N4        &kp KP_N5       &kp KP_N6    &hob LA(F16) F16  &hob LA(F17) F17  &hob LA(F18) F18  &hob LA(F17) F17  &none
-&kp BSLH  &lh LC(V) N2  &kp LC(TAB)       &kp KP_N1        &kp KP_N2       &kp KP_N3    &hob LA(F19) F19  &hob LA(F20) F20  &lh F22 F21       &lh F21 KP_NLCK   &to NAVN  &sys_reset
-                                          &lh ENTER ENTER  &hob DOT KP_N0  &kp STAR     &hob LA(F19) F19  &hob LA(F20) F20  &kp RALT
+          &hob F7 BACKSPACE  &kp LSHFT             &hob F16 F13           &hob F17 F14     &hob F18 F15    &kp KP_NUMBER_7           &kp KP_NUMBER_8           &kp KP_NUMBER_9           &hob F22 ENTER    &kp BSPC
+          &kp NUMBER_1       &hob F22 LC(C)        &kp KP_N4              &kp KP_N5        &kp KP_N6       &hob LA(F16) KP_NUMBER_4  &hob LA(F17) KP_NUMBER_5  &hob LA(F18) KP_NUMBER_6  &hob LA(F17) F17  &none
+&kp BSLH  &kp NUMBER_2       &hob LC(MINUS) LC(V)  &kp KP_N1              &kp KP_N2        &kp KP_N3       &hob LA(F19) KP_NUMBER_1  &hob LA(F20) KP_NUMBER_2  &lh F22 KP_NUMBER_3       &lh F21 KP_NLCK   &to NAVN  &kp KP_NUMLOCK
+                                                   &lh ENTER KP_NUMBER_5  &hob STAR KP_N0  &mo 2           &kp ENTER                 &hob LA(F20) KP_NUMBER_0  &kp RALT
             >;
         };
     };
