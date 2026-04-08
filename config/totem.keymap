@@ -101,7 +101,7 @@
         lm: lm {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYERMOVE";
-            bindings = <&to>, <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
@@ -132,10 +132,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-          &lm 1 F           &kp LSHFT              &kp KP_N7               &kp KP_N8               &kp KP_N9    &hob LA(F13) F13  &hob LA(F14) F14  &hob LA(F15) F15  &mo 1             &kp BSPC
-          &lh LS(LC(D)) N1  &hob F22 K_COPY        &kp KP_N4               &kp KP_N5               &kp KP_N6    &hob LA(F16) F16  &hob LA(F17) F17  &hob LA(F18) F18  &hob LA(F17) F17  &none
-&kp BSLH  &lh LC(LS(D)) N2  &hob KP_MINUS K_PASTE  &kp KP_N1               &kp KP_N2               &kp KP_N3    &hob LA(F19) F19  &hob LA(F20) F20  &hob F22 F21      &lh F21 KP_NLCK   &to 3     &sys_reset
-                                                   &hob KP_MULTIPLY ENTER  &hob KP_NUMBER_5 KP_N0  &mo 2        &hob LA(F19) F19  &hob LA(F20) F20  &kp RALT
+          &lm 1 F    &kp LSHFT              &kp KP_N7               &kp KP_N8               &kp KP_N9    &hob LA(F13) F13  &hob LA(F14) F14  &hob LA(F15) F15  &mo 1             &kp BSPC
+          &lh F9 N1  &hob F22 K_COPY        &kp KP_N4               &kp KP_N5               &kp KP_N6    &hob LA(F16) F16  &hob LA(F17) F17  &hob LA(F18) F18  &hob LA(F17) F17  &kp F5
+&kp BSLH  &lh F6 N2  &hob KP_MINUS K_PASTE  &kp KP_N1               &kp KP_N2               &kp KP_N3    &hob LA(F19) F19  &hob LA(F20) F20  &hob F22 F21      &lh F21 KP_NLCK   &to 3     &sys_reset
+                                            &hob KP_MULTIPLY ENTER  &hob KP_NUMBER_5 KP_N0  &mo 2        &hob LA(F19) F19  &hob LA(F20) F20  &kp RALT
             >;
         };
 
